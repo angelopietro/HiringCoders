@@ -1,0 +1,407 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  background: #191919;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+header ul li {
+  padding: 0 10px;
+}
+
+header ul li a {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  letter-spacing: 0.2px;
+  font-family: 'Oswald', sans-serif;
+  text-decoration: none;
+}
+
+header ul li:hover a, header ul li.active a {
+  color: #917758;
+}
+
+header .cart {
+  position: relative;
+}
+
+header i {
+  font-size: 1.225em;
+}
+
+header .badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #FFF;
+  border: 1px solid #191919;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #191919;
+  position: absolute;
+  top: -12px;
+  left: 20px;
+}
+
+header .logo {
+  max-width: 235px;
+  text-align: center;
+}
+
+header .logo img {
+  max-width: 235px;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+.banner {
+  background: url("../images/banner-topo.jpg");
+  background-size: 100% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  max-width: 350px;
+  margin-right: 120px;
+}
+
+.middle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.middle ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.middle ul li {
+  width: 360px;
+}
+
+.middle .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 50px;
+}
+.middle .card .text h1{
+  font-size: 22px;
+}
+
+.middle .card .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 250px;
+}
+
+.middle .card .image img {
+  max-width: 200px;
+}
+
+.middle .card-mais {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 50px;
+  width: 350px;
+}
+
+.middle .card-mais .card-cadastro {
+  background: #191919;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 50px;
+  color: #FFF;
+}
+
+.middle .card-mais .card-cadastro .texto {
+  font-size: 16px;
+  margin-bottom: 17px;
+}
+
+.middle .card button {
+  border: none;
+  outline: none;
+  height: 44px;
+  line-height: 40px;
+  background-color: #191919;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border-radius: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 0 20px;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.middle .card-mais .card-cadastro button {
+  border: none;
+  outline: none;
+  height: 44px;
+  line-height: 40px;
+  background-color: #191919;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border-radius: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 0 20px;
+  margin-top: 10px;
+  
+  width: 100%;
+  background-color: #262525;
+  cursor: pointer;
+}
+
+.middle .card-mais .card-cadastro input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 44px;
+  line-height: 40px;
+  background-color: #262626;
+  border: 1px solid #3c3c3c;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border-radius: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 0 20px;
+  margin: 5px 0;
+  max-width: 268px;
+}
+
+.mark .marcas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.mark .marcas li {
+  border: 1px solid #e4e4e4;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.mark .bullets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  width: 60px;
+  padding-bottom: 20px;
+}
+
+.mark .bullets span {
+  width: 8px;
+  height: 8px;
+  border: 1px solid #191919;
+  border-radius: 50%;
+}
+
+.mark .bullets span.active {
+  background-color: #191919;
+}
+
+
+.card .card-footer .price-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+}
+
+.card .card-footer .price-box p {
+  padding-right: 10px;
+}
+
+.card .card-footer .price-box .old-price {
+  text-decoration: line-through;
+  color: #BABABA;
+}
+
+.card .card-footer .price-box .special-price {
+  font-size: 22px;
+}
+
+.card .card-footer .price-box .special-price span {
+  font-weight: 600;
+}
+
+.card .card-footer .button-wrapper {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.card .card-footer .button-wrapper div.free-shipping {
+  padding: 20px;
+}
+
+.card .card-footer .button-wrapper div.free-shipping span {
+  color: darkseagreen;
+  font-weight: 600;
+}
+
+footer {
+  background: #191919;
+  padding: 50px 0;
+  text-align: center;
+}
+
+footer .footer-logo {
+  float: left;
+  width: 100%;
+  text-align: center;
+  padding: 0 0 45px 0;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+footer .footer-nav {
+  display: block;
+  font-size: 15px;
+  line-height: 16px;
+  color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+}
+
+footer .footer-nav ul li {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  padding-left: 34px;
+}
+
+footer .footer-nav ul li img {
+  max-width: 200px;
+}
+
+footer .footer-nav .gama {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+#mensagem{
+  font-size: 14px;
+}
+
+.display-element{
+  display: block;
+}
+
+.hide-element{
+  display: none;
+}
+
+.text-success{
+  padding: 20px;
+  background-color: #bcd0a9;
+  border: 1px solid #3c3c3c;
+  color: #487122;
+}
+.text-error{
+  padding: 20px;
+  background-color: #ebb5b5;
+  border: 1px solid #3c3c3c;
+  color: #ae1d1d;
+}
+/*# sourceMappingURL=estilo.css.map */
