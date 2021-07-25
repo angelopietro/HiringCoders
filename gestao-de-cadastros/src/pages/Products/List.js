@@ -1,8 +1,10 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import ButtomCustom from '../../components/Buttons/Global';
+
+import { Container } from 'react-bootstrap';
 import { ContainerTable, SectionHeader, HeaderActions } from './style';
+import ButtomCustom from '../../components/Buttons/Global';
+import NoResults from '../../components/NoResults';
 
 export default function ProductsList() {
   let history = useHistory();
@@ -28,29 +30,33 @@ export default function ProductsList() {
     </SectionHeader>
 
       <ContainerTable>
+
+        {productList.length === 0 ? ( <NoResults /> ) : (
         <table>
         <thead>
         <tr>
-        <th>Titulo</th>
-        <th>Titulo</th>
-        <th>Titulo</th>
+        <th>CÓDIGO</th>
+        <th>SKU</th>
+        <th>PRODUTO</th>
+        <th>ESTOQUE</th>
         </tr>
         </thead>
 
         <tbody>
-          {productList.map((product,indice) =>
+        {productList.map((product,indice) =>
         <tr key={indice}>
           <td>{indice + 1}</td>
-          <td>{product.productSku} {product.productName}</td>
+          <td>{product.productSku}</td>
+          <td>{product.productName}</td>
           <td>{product.productStock}</td>
         </tr>
         )}
         </tbody>
 
-        </table>
+      </table>
+      )}
 
-
-</ContainerTable>
+    </ContainerTable>
 
     </Container>
   );

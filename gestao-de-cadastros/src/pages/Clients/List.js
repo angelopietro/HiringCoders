@@ -1,8 +1,10 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import ButtomCustom from '../../components/Buttons/Global';
+
+import { Container } from 'react-bootstrap';
 import { ContainerTable, SectionHeader, HeaderActions } from './style';
+import ButtomCustom from '../../components/Buttons/Global';
+import NoResults from '../../components/NoResults';
 
 export default function ClientsList() {
   let history = useHistory();
@@ -12,7 +14,6 @@ export default function ClientsList() {
   }
 
   let clientList = JSON.parse(localStorage.getItem('@HC-Clients') || '[]');
-
   return (
 
     <Container>
@@ -28,29 +29,29 @@ export default function ClientsList() {
     </SectionHeader>
 
       <ContainerTable>
+        {clientList.length === 0 ? ( <NoResults /> ) : (
         <table>
         <thead>
         <tr>
-        <th>Titulo</th>
-        <th>Titulo</th>
-        <th>Titulo</th>
+        <th>CÓDIGO</th>
+        <th>CLIENTE</th>
+        <th>EMAIL</th>
         </tr>
         </thead>
 
         <tbody>
-          {clientList.map((cliente,indice) =>
+          {clientList.map((client,indice) =>
         <tr key={indice}>
           <td>{indice + 1}</td>
-          <td>{cliente.firstName} {cliente.lastName}</td>
-          <td>{cliente.firstName}</td>
+          <td>{client.firstName} {client.lastName}</td>
+          <td>{client.email}</td>
         </tr>
         )}
         </tbody>
-
         </table>
+        )}
 
-
-</ContainerTable>
+      </ContainerTable>
 
     </Container>
   );

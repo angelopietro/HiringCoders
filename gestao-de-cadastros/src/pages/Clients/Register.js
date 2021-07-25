@@ -1,29 +1,17 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-/* BOOTSTRAP */
-import { Container, Row, Col, Form, FloatingLabel } from 'react-bootstrap';
-
-/* VALIDAÇÃO COM YUP*/
+import toast from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-
-/* SCHEMAS PARA VALIDAÇÃO COM YUP */
 import { validationSchema } from '../../schemas/Clients';
 
-/* TOAST DE ALERTA */
-import toast from 'react-hot-toast';
-
-/*COMPONENTES*/
-import Footer from '../../components/Footer'
-
-/*API*/
-import api from '../../services/Api';
-
-/* ESTILOS */
+import { Container, Row, Col, Form, FloatingLabel } from 'react-bootstrap';
 import { SectionHeader, HeaderActions } from './style';
 import ButtomCustom from '../../components/Buttons/Global';
 import ButtonSave from '../../components/Buttons/Submit';
+
+import api from '../../services/Api';
 
 export default function RegisterClient() {
 
@@ -37,7 +25,7 @@ export default function RegisterClient() {
   const [stateList, setStateList] = useState([]);
   const [city, setCity] = useState('');
   const [cityList, setCityList] = useState([]);
-  const [store, setStore] = useState([]);
+
 
   const loadStates = () => {
     api.get('/estados')
@@ -76,13 +64,42 @@ export default function RegisterClient() {
   const submitForm = (data) => {
 
     try {
-      let newData = JSON.stringify([...store || [], data])
-      localStorage.setItem('@HC-Clients', newData)
-      setStore(JSON.parse(newData))
+
+      let jsonData = {
+              cpf: data.cpf,
+              email: data.email,
+              firstName: data.firstName,
+              gender: data.gender,
+              lastName: data.lastName,
+              person: data.person,
+              phone: data.phone,
+              rg: data.rg,
+              Adresses:[{
+                        address: data.address,
+                        number: data.number,
+                        district: data.district,
+                        city: data.city,
+                        complement: data.complement,
+                        state: data.state,
+                        zipcode: data.zipcode,
+              }]
+      }
+
+      const existingClients = localStorage.getItem('@HC-Clients') ? localStorage.getItem('@HC-Clients') : "[]";
+      const arrayClient =  JSON.parse(existingClients);
+
+      arrayClient.push(jsonData);
+      localStorage.setItem('@HC-Clients', JSON.stringify(arrayClient));
+
       toast.success('Cliente cadastrado com sucesso!', {
-        duration: 4000,
+        duration: 3000,
         position: 'bottom-right'
       });
+
+      setTimeout(() =>{
+        redirectListClient();
+      },3500);
+
 
     } catch (error) {
       toast.error(`${error.response.data.error}`, {
@@ -216,7 +233,7 @@ export default function RegisterClient() {
               </Col>
               <Col className="mb-3">
                 <FloatingLabel controlId="floatingSelect" label="Cidade *">
-                    <Form.Select size="lg" aria-label="Cidade *" {...register('city')} onChange={(e: any) => setCity(e.target.value)} className={`${errors.city ? 'is-invalid' : ''}`}>
+                    <Form.Select size="lg" aria-label="Cidade *" value={city} {...register('city')} onChange={(e: any) => setCity(e.target.value)} className={`${errors.city ? 'is-invalid' : ''}`}>
                       {cityList.map((cidade, index) => (
                       <option value={cidade.nome} key={index}>{cidade.nome}</option>
                       ))}

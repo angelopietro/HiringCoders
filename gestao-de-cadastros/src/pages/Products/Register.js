@@ -1,23 +1,12 @@
-import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
+import { useHistory } from 'react-router-dom'
 
-/* BOOTSTRAP */
-import { Container, Row, Col, Form, FloatingLabel } from 'react-bootstrap';
-
-/* VALIDAÇÃO COM YUP*/
+import toast from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-
-/* SCHEMAS PARA VALIDAÇÃO COM YUP */
 import { validationSchema } from '../../schemas/Products';
 
-/* TOAST DE ALERTA */
-import toast from 'react-hot-toast';
-
-/*COMPONENTES*/
-import Footer from '../../components/Footer'
-
-/* ESTILOS */
+import { Container, Row, Col, Form, FloatingLabel } from 'react-bootstrap';
 import { SectionHeader, HeaderActions } from './style';
 import ButtomCustom from '../../components/Buttons/Global';
 import ButtonSave from '../../components/Buttons/Submit';
@@ -30,8 +19,6 @@ export default function RegisterProduct() {
     history.push('/products');
   }
 
-  const [store, setStore] = useState([]);
-
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(validationSchema)
   });
@@ -39,17 +26,25 @@ export default function RegisterProduct() {
   const submitForm = (data) => {
 
     try {
-      let newData = JSON.stringify([...store || [], data])
-      localStorage.setItem('@HC-Products', newData)
-      setStore(JSON.parse(newData))
+
+      const existingProduts = localStorage.getItem('@HC-Products') ? localStorage.getItem('@HC-Products') : "[]";
+      const arrayProduct =  JSON.parse(existingProduts);
+
+      arrayProduct.push(data);
+      localStorage.setItem('@HC-Products', JSON.stringify(arrayProduct));
+
       toast.success('Produto cadastrado com sucesso!', {
-        duration: 4000,
+        duration: 3000,
         position: 'bottom-right'
       });
 
+      setTimeout(() =>{
+        redirectListProducts();
+      },3500);
+
     } catch (error) {
       toast.error(`${error.response.data.error}`, {
-        duration: 4000,
+        duration: 3000,
         position: 'bottom-right'
       });
     }
@@ -119,8 +114,6 @@ export default function RegisterProduct() {
               </FloatingLabel>
             </Col>
            </Row>
-
-
 
             <Row><ButtonSave>CADASTRAR</ButtonSave></Row>
 

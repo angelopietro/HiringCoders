@@ -19,57 +19,30 @@ html,
 body,
 #root {
   height: 100%;
+  padding-top: 10px;
   background: #F5F5F5;
   a {
     text-decoration: none;
   }
-  ul {
-    list-style: none;
-  }
+
   input,
   button {
     border-radius: 0.4rem;
-  }
-  input {
-    width: 100%;
-    border: #DDD 1px solid;
-    &::placeholder {
-      color: #999;
-    }
   }
   button {
     cursor: pointer;
   }
   h1 {
-    font-size: 2rem; /* 32px */
+    font-size: 2rem;
     font-weight: 600;
     color: #444;
   }
   h2 {
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.5rem;
     font-weight: 600;
     color: #444;
   }
-  h3 {
-    font-size: 1.17rem; /* 18.72px */
-    font-weight: 600;
-    color: #444;
-  }
-  h4 {
-    font-size: 1rem; /* 16px */
-    font-weight: 600;
-    color: #444;
-  }
-  h5 {
-    font-size: 0.87rem; /* 14px */
-    font-weight: 600;
-    color: #444;
-  }
-  h6 {
-    font-size: 0.67rem; /* 10.72px */
-    font-weight: 600;
-    color: #444;
-  }
+
   table {
     border-spacing: 0;
     border-collapse: collapse;
@@ -86,11 +59,9 @@ body,
       & tr + tr {
         border-top: 1px solid #EEE;
       }
-      & tr:hover {
-        border-bottom: 1px solid #999;
-      }
+
       td {
-        padding: 15px 10px 15px 0;
+        padding: 1rem 2rem;
         & a + a {
           margin-left: 10px;
         }
