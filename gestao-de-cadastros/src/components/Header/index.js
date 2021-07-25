@@ -2,8 +2,8 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 
-import logo from '../../assets/images/gama-academy.png';
 import { Content, Line } from './style';
+import logo from '../../assets/images/gama-academy.png';
 
 export default function Header() {
 
