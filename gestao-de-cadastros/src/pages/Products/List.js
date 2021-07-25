@@ -4,24 +4,24 @@ import { useHistory } from 'react-router-dom';
 import ButtomCustom from '../../components/Buttons/Global';
 import { ContainerTable, SectionHeader, HeaderActions } from './style';
 
-export default function ClientsList() {
+export default function ProductsList() {
   let history = useHistory();
 
-  const redirectNewClient = () => {
-  history.push('/clients/new');
+  const redirectNewProduct = () => {
+  history.push('/products/new');
   }
 
-  let clientList = JSON.parse(localStorage.getItem('@HC-Clients') || '[]');
+  let productList = JSON.parse(localStorage.getItem('@HC-Products') || '[]');
 
   return (
 
     <Container>
 
     <SectionHeader>
-    <h2>Gerenciando Clientes</h2>
+    <h2>Gerenciando Produtos</h2>
 
       <HeaderActions>
-        <ButtomCustom onClick={redirectNewClient}>
+        <ButtomCustom onClick={redirectNewProduct}>
           CADASTRAR
         </ButtomCustom>
       </HeaderActions>
@@ -38,11 +38,11 @@ export default function ClientsList() {
         </thead>
 
         <tbody>
-          {clientList.map((cliente,indice) =>
+          {productList.map((product,indice) =>
         <tr key={indice}>
           <td>{indice + 1}</td>
-          <td>{cliente.firstName} {cliente.lastName}</td>
-          <td>{cliente.firstName}</td>
+          <td>{product.productSku} {product.productName}</td>
+          <td>{product.productStock}</td>
         </tr>
         )}
         </tbody>
