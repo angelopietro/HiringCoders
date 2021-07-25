@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Container, Row, Table } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import logo from '../../assets/images/gama-academy.png';
 import { Content, Line } from './style';
@@ -17,11 +17,11 @@ export default function Header() {
           <Line />
           <ul>
             <li>
-              <NavLink to="/clients" activeClassName="active">Clientes</NavLink>
+              <NavLink to="/clients" activeClassName="active">Gestão de Clientes</NavLink>
             </li>
             <li><Line /></li>
             <li>
-              <NavLink to="/products" activeClassName="active">Produtos</NavLink>
+              <NavLink to="/products" activeClassName="active">Gestão de Produtos</NavLink>
             </li>
           </ul>
         </nav>

@@ -13,7 +13,7 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     img {
-      max-height: 64px;
+      max-height: 100px;
       margin-left: 3em;
     }
     ul {
