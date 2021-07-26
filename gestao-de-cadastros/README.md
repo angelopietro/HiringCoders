@@ -19,3 +19,8 @@ O Objetivo deste projeto foi colocar em prática e exercitar os conhecimentos ad
 * react-router-dom - https://www.npmjs.com/package/react-router-dom
 * styled-components - https://www.npmjs.com/package/styled-components 
 
+A Aplicação salva os dados em localStorage no formato JSON, e retorna uma lista para o usuário.
+
+### Ponto de atenção
+
+* A aplicação não possui um CRUD completo (Editar, Excluir e visualizar os dados não foram desenvolvidos)
